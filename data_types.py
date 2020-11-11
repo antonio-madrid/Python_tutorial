@@ -1,9 +1,13 @@
-# Data types
-
+# Variables
+# A regular variable declaration
 globalVariable = "the way to declare a variable"
 
-# 5 + ' number' error, Python cannot add numbers to Strings
+# 5 + ' number' error
+# Python cannot add numbers to Strings
 
+# ------------------------------------------------------------------------------------------------------
+
+# Direct declaration
 string = 'another way to declare a string'
 integer = 1
 aFloat = 2.2
@@ -18,6 +22,8 @@ boolean = True
 justBytes = b"bytes"
 arrayBytes = bytearray(5)
 aMemoryView = memoryview(bytes(5))
+
+# ------------------------------------------------------------------------------------------------------
 
 # Declare variables with constructors
 integer = int(-10)

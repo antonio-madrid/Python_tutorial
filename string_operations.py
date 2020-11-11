@@ -1,5 +1,3 @@
-# String operations
-
 # slice an String, which are an array
 string = "Hello world   "
 print(string[0:5])

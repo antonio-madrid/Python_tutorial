@@ -9,6 +9,8 @@ while i < 6:
     print(i)
 
 
+# ------------------------------------------------------------------------------------------------------
+
 # for loop with a range, number of times
 # initial, last, increment
 for x in range(2, 6, 2):
