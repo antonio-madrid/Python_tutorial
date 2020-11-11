@@ -1,10 +1,9 @@
 # Lambdas
-lambdaWithoutArgs = lambda : print("No arguments lambda")
-lambdaWithoutArgs()
+lambda_without_args = lambda: print("No arguments lambda")
+lambda_without_args()
 
-oneArgLambda = lambda onlyArg : print("Lambda with an only argument: " + onlyArg)
-oneArgLambda("TheArgument")
+one_arg_lambda = lambda only_arg: print("Lambda with an only argument: " + only_arg)
+one_arg_lambda("TheArgument")
 
-myLambda = lambda numberA, numberB : numberA * numberB
-print(myLambda(5, 5))
-
+my_lambda = lambda numberA, numberB: numberA * numberB
+print(my_lambda(5, 5))

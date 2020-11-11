@@ -28,3 +28,6 @@ aList = ["apple", "banana", "cherry"]
 
 # Bitwise Operators
 # & | ^ ~ << >>
+
+# Use of parentheses
+print((5 - 5) + (2 * 80) - (140 / 3))
