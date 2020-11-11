@@ -11,26 +11,26 @@ class Void:
 
 # Simple class
 class MyClass:
-    __privateAttribute__ = 0
-    publicAttribute = "a public property"
+    __private_attribute__ = 0
+    public_attribute = "a public property"
 
     # Constructor
     def __init__(self, attribute2):
         # self = this
         # autoCreatedAttribute is create on the fly as a public one
-        self.publicAutoCreatedAttribute = self.__stringify(attribute2)
+        self.public_auto_created_attribute = self.__stringify(attribute2)
         # __privateAutoCreatedAttribute is created on the fly as a private attribute
-        self.__privateAutoCreatedAttribute = self.__stringify(attribute2 * 25)
+        self.__private_auto_created_attribute = self.__stringify(attribute2 * 25)
 
-    def set__attribute__(self, number):
-        self.__privateAttribute__ = number
+    def set__private_attribute__(self, number):
+        self.__private_attribute__ = number
 
-    def get__attribute__(self):
-        return str(self.__privateAttribute__)
+    def get__private_attribute__(self):
+        return str(self.__private_attribute__)
 
     # Auto created private properties starts with __
-    def set__privateAutoCreatedAttribute(self, number):
-        self.__privateAutoCreatedAttribute = int(number)
+    def set__private_auto_created_attribute(self, number):
+        self.__private_auto_created_attribute = int(number)
 
     # Private static method
     @staticmethod
@@ -39,16 +39,16 @@ class MyClass:
 
 
 myObject = MyClass(2)
-myObject.set__attribute__(1)
-myObject.set__privateAutoCreatedAttribute(3)
-print("Getting the private attribute: " + myObject.get__attribute__())
-print("Directly getting the value of the publicAttribute: " + myObject.publicAttribute)
-print("Getting the public autoCreatedAttribute: " + myObject.publicAutoCreatedAttribute)
+myObject.set__private_attribute__(1)
+myObject.set__private_auto_created_attribute(3)
+print("Getting the private attribute: " + myObject.get__private_attribute__())
+print("Directly getting the value of the publicAttribute: " + myObject.public_attribute)
+print("Getting the public autoCreatedAttribute: " + myObject.public_auto_created_attribute)
 
 # ------------------------------------------------------------------------------------------------------
 
 # deleting a property
-del myObject.publicAutoCreatedAttribute
+del myObject.public_auto_created_attribute
 
 # deleting an object
 del myObject
