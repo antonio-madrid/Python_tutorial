@@ -21,4 +21,5 @@ Once a module has been installed, it must be imported for using.
 <code>import camelcase
 <br>
 c = camelcase.Camelcase()</code>
+<br>
 </p>

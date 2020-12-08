@@ -16,3 +16,18 @@ except:
     print("General exception caught")
 
 
+# To throw an Exception, use raise
+try:
+    raise ArithmeticError("Arithmetic error thrown")
+except ArithmeticError:
+    print("Arithmetic error caught")
+
+try:
+    string = "string"
+    if not type(string) in int:
+        raise TypeError("Only integers allowed")
+except TypeError:
+    print("TypeError exception caught")
+
+
+
