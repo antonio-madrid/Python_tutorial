@@ -12,4 +12,3 @@ if __name__ == "__main__":
     print("Code executed as a Python script.")
 else:
     print("Code executed as Python module")
-
