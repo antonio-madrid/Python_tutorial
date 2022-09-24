@@ -1,13 +1,18 @@
+# ------------------------------------------------------------------------------------------------------
 # Variables
+# ------------------------------------------------------------------------------------------------------
+
 # A regular variable declaration
 globalVariable = "the way to declare a variable"
 
 # 5 + ' number' error
 # Python cannot add numbers to Strings
 
+
+# ------------------------------------------------------------------------------------------------------
+# Direct declaration
 # ------------------------------------------------------------------------------------------------------
 
-# Direct declaration
 string = 'another way to declare a string'
 integer = 1
 aFloat = 2.2
@@ -23,9 +28,11 @@ justBytes = b"bytes"
 arrayBytes = bytearray(5)
 aMemoryView = memoryview(bytes(5))
 
+
+# ------------------------------------------------------------------------------------------------------
+# Declare variables with constructors
 # ------------------------------------------------------------------------------------------------------
 
-# Declare variables with constructors
 integer = int(-10)
 aFloat = float(2.3e3)  # e Exponential, power
 complexNumber = complex(1j)  # j imaginary part

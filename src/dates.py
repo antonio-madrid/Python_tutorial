@@ -15,6 +15,6 @@ print(birthdate)
 month = fullDateTime.strftime("%B")
 print(month)
 
-# strftime string forma time within a given code
+# strftime string format time within a given code
 formattedDate = fullDateTime.strftime("%B %d of %Y")
 print(formattedDate)

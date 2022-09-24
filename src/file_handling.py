@@ -10,9 +10,9 @@
 # 't', text, default
 # 'b', binary, e.g. images
 
-# open() must to be in a try block and also need to be closed
+# open() must be in a try block and also need to be closed
 try:
-    f = open("./demofile.txt")  # 'rt' as a second parameter by default
+    f = open("../support/demofile.txt")  # 'rt' as a second parameter by default
     # read() loads all data in a file
     data = f.read()
     print("Printing all the data in a try block:")
@@ -23,7 +23,7 @@ except IOError:
 
 # with open() is a sugar sintax, avoiding the use of try block and close() function
 # file must to be specify with an alias
-with open("demofile.txt") as file:
+with open("../support/demofile.txt") as file:
     partial_data = file.read(5)
     print("Printing partial data")
     print(partial_data)
@@ -34,22 +34,22 @@ with open("demofile.txt") as file:
     print(file.readline())
 
 
-with open("demofile.txt", "a") as file:
+with open("../support/demofile.txt", "a") as file:
     print("Appending data to demofile.txt")
     file.write("\nNow the file has more content.")
 
 
-with open("demofile.txt") as file:
+with open("../support/demofile.txt") as file:
     print("\nReading appended data: ")
     print(file.read())
 
 
-with open("demofile.txt", "w") as file:
+with open("../support/demofile.txt", "w") as file:
     print("overwriting demofile.txt")
     file.write("This is demofile.txt\nThis file is for testing purposes.\nThank you.")
 
 
-with open("demofile.txt") as file:
+with open("../support/demofile.txt") as file:
     print("\nPrinting demofile.txt overwritten:")
     print(file.read())
 

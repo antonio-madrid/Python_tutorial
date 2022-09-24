@@ -1,7 +1,7 @@
 # To use modules, import them
 
 # import imports everything from modules.py
-import modules
+from src import modules, modules as miModule
 
 # Using the module functions by full name
 result = modules.sum(5, 7)
@@ -14,7 +14,6 @@ print(modules.moduleVariable)
 print(modules.moduleObject["name"])
 
 # Renaming an imported module
-import modules as miModule
 
 print(miModule.sum(3, 3))
 
@@ -23,7 +22,7 @@ content = dir(miModule)
 print(content)
 
 # Import just an object, function or variable
-from modules import moduleObject
+from src.modules import moduleObject
 
 print("age:")
 print(moduleObject["age"])
