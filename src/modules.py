@@ -1,4 +1,4 @@
-# Modules are python libraries
+# Modules are python external_libraries
 # To create a module, create a module.py
 # And create functions and variables inside it
 
