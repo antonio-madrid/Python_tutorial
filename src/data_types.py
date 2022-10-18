@@ -24,7 +24,7 @@ dictionary = {"name": "Antonio", "age": 31}  # dictionary is a hashtable, a JSON
 aSet = {"apple", "banana", "cherry"}  # unordered and unindexed list
 aFrozenSet = frozenset({"apple", "banana", "cherry"})
 boolean = True
-justBytes = b"bytes"
+justBytes = bytes(5)
 arrayBytes = bytearray(5)
 aMemoryView = memoryview(bytes(5))
 

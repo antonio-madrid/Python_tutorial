@@ -1,7 +1,31 @@
-<h1>PIP</h1>
-<h3>Python package manager</h3>
-<p>Similar to NPM, allows to install external Python packages and modules.
-Can find PIP packages on https://pypi.org/
+# Python command line
+
+## Python
+It checks what Python interpreter version is in use or if it is installed.
+```shell
+python --version
+```
+
+It checks what Python 3 interpreter version is in use or if it is installed.
+```shell
+python3 --version
+```
+
+It executes Python files with Python 2 or Python 3 if set as a default interpreter.
+```shell
+python ../main.py
+```
+
+## Python3
+It executes Python files with Python 3 interpreter.
+```shell
+python3 ../main.py
+```
+
+# PIP
+### Python package manager
+Similar to NPM, allows to install external Python packages and modules.
+Can find PIP packages on https://pypi.org/  
 
 #### PIP usual commands:
 
@@ -16,7 +40,7 @@ pip3 install somePackage
 ```
 
 <br> 
-It uninstall Python packages or libraries for Python2 or Python3 whether is set as the default version.  
+It uninstall Python packages or libraries for Python2 or Python3 whether it is set as the default version.  
 
 ```shell
 pip uninstall somePackage
