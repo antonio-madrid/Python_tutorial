@@ -1,4 +1,7 @@
+# ------------------------------------------------------------------------------------------------------
 # Built-in Math functions
+# ------------------------------------------------------------------------------------------------------
+# Standard operations
 
 # min() returns the lowest value in an iterable
 minimum = min(5, 2, 9, 7)
@@ -20,9 +23,15 @@ print("4 to the power of 3:") # 4 * 4 * 4
 print(power)
 
 
-# Built-in module math
+# ------------------------------------------------------------------------------------------------------
+# Math module is a built-in module in Python
+# ------------------------------------------------------------------------------------------------------
+
 import math
 
+# Math module standard operations
+
+# math.sqrt
 squareRoot = math.sqrt(64)
 print("The square root of 64 is: ") # 8 * 8
 print(squareRoot)
@@ -37,9 +46,15 @@ floor = math.floor(2.75)
 print("2.75 rounded down")
 print(floor)
 
+# math.pi
 pi = math.pi
 print("pi constant: ")
 print(pi)
+
+
+# ------------------------------------------------------------------------------------------------------
+# Random class
+# ------------------------------------------------------------------------------------------------------
 
 # How to get random numbers
 # Using de built-in class random

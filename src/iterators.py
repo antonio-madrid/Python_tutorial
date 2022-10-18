@@ -1,3 +1,7 @@
+# ------------------------------------------------------------------------------------------------------
+# Iterators
+# ------------------------------------------------------------------------------------------------------
+
 # Iterable objects (lists, tuples, dictionaries and sets)
 
 myFruitTuple = ("banana", "apple", "peach")
@@ -34,6 +38,11 @@ print(next(numerIter))
 print(next(numerIter))
 print(next(numerIter))
 
+
+# ------------------------------------------------------------------------------------------------------
+# Iterable classes
+# ------------------------------------------------------------------------------------------------------
+
 # To create an Iterable Class
 # Implements __iter__() and __next__() functions
 
@@ -65,7 +74,4 @@ print(next(myIterNums))
 print(next(myIterNums))
 print(next(myIterNums))
 print(next(myIterNums))
-print(next(myIterNums)) # Doesn't iterate any longer
-
-
-
+print(next(myIterNums))  # Doesn't iterate any longer

@@ -1,3 +1,8 @@
+# ------------------------------------------------------------------------------------------------------
+# try / except
+# ------------------------------------------------------------------------------------------------------
+
+# Standard try / except block
 try:
     print("try block allows to run code with a risk of throwing errors")
 except:
@@ -8,6 +13,7 @@ finally:
     print("finally block allows to execute code, regardless the result of a try/except blocks")
 
 
+# Multiple exceptions try / except block
 try:
     print("multiple exceptions handling")
 except NameError:
@@ -15,6 +21,10 @@ except NameError:
 except:
     print("General exception caught")
 
+
+# ------------------------------------------------------------------------------------------------------
+# Raise exceptions
+# ------------------------------------------------------------------------------------------------------
 
 # To throw an Exception, use raise
 try:

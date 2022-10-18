@@ -1,4 +1,6 @@
+# ------------------------------------------------------------------------------------------------------
 # main functions in Python
+# ------------------------------------------------------------------------------------------------------
 
 # Every Python script contains a __name__ variable which indicates the name of the script
 # When a Python script is directly executed by the Python interpreter, __name__ variable is set to __main__

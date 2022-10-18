@@ -1,5 +1,27 @@
-# slice an String, which are an array
 string = "Hello world   "
+
+
+# ------------------------------------------------------------------------------------------------------
+# String interpolation
+# ------------------------------------------------------------------------------------------------------
+# It allows inserting variables’ or expression values into a String.
+
+# It uses the string function f''
+stringInterpolated = f'This is the value of string variable: {string}'
+print(stringInterpolated)
+
+import datetime
+
+fullDateTime = datetime.datetime.now()
+
+print(f"This is another String Interpolation, and today's date is {fullDateTime}")
+
+
+# ------------------------------------------------------------------------------------------------------
+# Standard operations
+# ------------------------------------------------------------------------------------------------------
+
+# slice a String, which are an array
 print(string[0:5])
 
 # .length in Python
@@ -29,15 +51,3 @@ print(string.format(31))
 
 # escaped character \
 escapeCharacter = "\n"
-
-
-# String interpolation
-# It uses the string function f''
-stringInterpolated = f'This is the value of string variable: {string}'
-print(stringInterpolated)
-
-import datetime
-
-fullDateTime = datetime.datetime.now()
-
-print(f"This is another String Interpolation, and today's date is {fullDateTime}")

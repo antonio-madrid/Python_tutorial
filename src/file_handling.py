@@ -1,28 +1,24 @@
-# with open is a shortcut of open(), avoiding the use of try block and .close() function
-
-# open() modes
-# 'r', read, default mode, raises an error if file does not exist
-# 'a', appending data, creates the file if does not exist
-# 'w', overwriting data
-# 'x', create file, raises an error if file exists
-
-# additional open() parameter
-# 't', text, default
-# 'b', binary, e.g. images
+# ------------------------------------------------------------------------------------------------------
+# Open files in a classic way
+# ------------------------------------------------------------------------------------------------------
 
 # open() must be in a try block and also need to be closed
 try:
     f = open("../support/demofile.txt")  # 'rt' as a second parameter by default
-    # read() loads all data in a file
-    data = f.read()
+    data = f.read()  # read() loads all data in a file
     print("Printing all the data in a try block:")
     print(data)
     f.close()
 except IOError:
     print("Cannot open the file")
 
-# with open() is a sugar sintax, avoiding the use of try block and close() function
-# file must to be specify with an alias
+
+# ------------------------------------------------------------------------------------------------------
+# Open files using with open function
+# ------------------------------------------------------------------------------------------------------
+
+# with open() is a sugar syntax, avoiding the use of try block and close() function
+# file must be named with an alias
 with open("../support/demofile.txt") as file:
     partial_data = file.read(5)
     print("Printing partial data")
@@ -34,34 +30,51 @@ with open("../support/demofile.txt") as file:
     print(file.readline())
 
 
-with open("../support/demofile.txt", "a") as file:
+# ------------------------------------------------------------------------------------------------------
+# open() modes
+# ------------------------------------------------------------------------------------------------------
+# 'r', read, default mode, raises an error if file does not exist
+# 'a', appending data, creates the file if it does not exist
+# 'w', overwriting data
+# 'x', create file, raises an error if file exists
+
+with open("../support/demofile.txt", "a") as file:  # a parameter - appending data
     print("Appending data to demofile.txt")
     file.write("\nNow the file has more content.")
 
 
-with open("../support/demofile.txt") as file:
+with open("../support/demofile.txt") as file:  # default r parameter - read mode
     print("\nReading appended data: ")
     print(file.read())
 
 
-with open("../support/demofile.txt", "w") as file:
+with open("../support/demofile.txt", "w") as file:  # w parameter - write mode
     print("overwriting demofile.txt")
     file.write("This is demofile.txt\nThis file is for testing purposes.\nThank you.")
 
 
-with open("../support/demofile.txt") as file:
+with open("../support/demofile.txt") as file:  # default r parameter - read mode
     print("\nPrinting demofile.txt overwritten:")
     print(file.read())
 
 
-with open("newFile.txt", "x") as file:
+with open("newFile.txt", "x") as file:  # x parameter - creating files
     print("Just creating a new file...")
 
 
+# ------------------------------------------------------------------------------------------------------
+# additional open() parameter
+# ------------------------------------------------------------------------------------------------------
+# 't', text, default
+# 'b', binary, e.g. images
+
+
+# ------------------------------------------------------------------------------------------------------
 # deleting a file
+# ------------------------------------------------------------------------------------------------------
 import os
 
-# before, checking  if file exists
+# before, check if file exists
 if os.path.exists("newFile.txt"):
     os.remove("newFile.txt")
 else:

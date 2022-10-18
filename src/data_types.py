@@ -13,36 +13,50 @@ globalVariable = "the way to declare a variable"
 # Direct declaration
 # ------------------------------------------------------------------------------------------------------
 
-string = 'another way to declare a string'
-integer = 1
-aFloat = 2.2
-complexNumber = 2j
-aList = ["apple", "banana", "cherry"]  # ArrayList on Python
-aTuple = ("apple", "banana", "cherry")  # tuple is an ordered and immutable list
-numberRange = range(5)
-dictionary = {"name": "Antonio", "age": 31}  # dictionary is a hashtable, a JSON
-aSet = {"apple", "banana", "cherry"}  # unordered and unindexed list
-aFrozenSet = frozenset({"apple", "banana", "cherry"})
-boolean = True
-justBytes = bytes(5)
-arrayBytes = bytearray(5)
-aMemoryView = memoryview(bytes(5))
+# Basic types
+string_variable = 'another way to declare a string'
+integer_variable = 1
+float_variable = 2.2
+boolean_variable = True
+
+
+# Complex types
+complex_number_variable = 2j
+bytes_variable = bytes(5)
+array_bytes_variable = bytearray(5)
+memoryview_variable = memoryview(bytes(5))
+
+
+# Collection types
+list_variable = ["apple", "banana", "cherry"]  # ArrayList on Python
+tuple_variable = ("apple", "banana", "cherry")  # tuple is an ordered and immutable list
+number_range_variable = range(5)
+dictionary_variable = {"name": "Antonio", "age": 31}  # dictionary is a hashtable, a JSON object
+set_variable = {"apple", "banana", "cherry"}  # unordered and not indexed list
+frozen_set_variable = frozenset({"apple", "banana", "cherry"})
 
 
 # ------------------------------------------------------------------------------------------------------
 # Declare variables with constructors
 # ------------------------------------------------------------------------------------------------------
 
-integer = int(-10)
-aFloat = float(2.3e3)  # e Exponential, power
-complexNumber = complex(1j)  # j imaginary part
-aList = list(("apple", "banana", "cherry"))
-aTuple = tuple(("apple", "banana", "cherry"))
-numberRange = range(6)
-dictionary = dict(name="Antonio", age=31)
-aSet = set(("apple", "banana", "cherry"))
-aFrozenSet = frozenset(("apple", "banana", "cherry"))
-boolean = bool(0)
-justBytes = bytes(5)
-arrayBytes = bytearray(5)
-aMemoryView = memoryview(bytes(5))
+# Basic types
+integer_variable = int(-10)
+float_variable = float(2.3e3)  # e Exponential, power
+boolean_variable = bool(0)
+
+
+# Complex types
+complex_number_variable = complex(1j)  # j imaginary part
+bytes_variable = bytes(5)
+array_bytes_variable = bytearray(5)
+memoryview_variable = memoryview(bytes(5))
+
+
+# Collection types
+list_variable = list(("apple", "banana", "cherry"))
+tuple_variable = tuple(("apple", "banana", "cherry"))
+number_range_variable = range(6)
+dictionary_variable = dict(name="Antonio", age=31)
+set_variable = set(("apple", "banana", "cherry"))
+frozen_set_variable = frozenset(("apple", "banana", "cherry"))
