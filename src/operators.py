@@ -34,19 +34,27 @@ print(string.format(31))
 escapeCharacter = "\n"
 
 # Identity Operator, check if both variables are the same object
-string is string
-string is not escapeCharacter
+if string is string:
+    print('string variable is the same type as string variable.')
 
-aList = ["apple", "banana", "cherry"]
+
+if string is not escapeCharacter:
+    print('string variable is not the same type as escapeCharacter variable.')
 
 
 # ------------------------------------------------------------------------------------------------------
 # Membership Operators
 # ------------------------------------------------------------------------------------------------------
 
+fruit_list = ["apple", "banana", "cherry"]
+
 # Membership Operators, checks whether a value is in an object
-"banana" in aList
-"ham" not in aList
+if "banana" in fruit_list:
+    print('"Banana" is inside the fruit_list.')
+
+
+if "ham" not in fruit_list:
+    print('"Ham" is not inside the fruit_list.')
 
 
 # ------------------------------------------------------------------------------------------------------

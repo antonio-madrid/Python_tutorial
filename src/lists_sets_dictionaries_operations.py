@@ -3,34 +3,34 @@
 # ------------------------------------------------------------------------------------------------------
 # Python does not have built-in support for Arrays, use lists instead
 
-aList = list(("apple", "banana", "cherry"))
-dicctionary = {"name": "Antonio", "age": 31}  # dicctionary is a hashtable, a JSON
+my_list = list(("apple", "banana", "cherry"))
+my_dictionary = {"name": "Antonio", "age": 31}  # dictionary is a hashtable, a JSON
 
 # Range in a list
-print(aList[1:3])
+print(my_list[1:3])
 
 # take a value
-print(aList[0])
+print(my_list[0])
 
 # Loop through a List
-for fruit in aList:
+for fruit in my_list:
     print(fruit)
 
-# check if item exists
-print("banana" in aList)
+# check if an item exists
+print("banana" in my_list)
 
 # Add items
-aList.append("mango")
-aList.append("orange")
-aList.append("strawberry")
+my_list.append("mango")
+my_list.append("orange")
+my_list.append("strawberry")
 
-fruitList = aList
+fruitList = my_list
 
 # Remove items
-aList.remove("mango")
-aList.pop()
-del aList[3]
-aList.clear()
+my_list.remove("mango")  # Deletes a specific item by the given value
+my_list.pop()  # Deletes the last item
+del my_list[3]  # Deletes a specific item by the given position
+my_list.clear()  # Deletes all the collection values
 
 
 # ------------------------------------------------------------------------------------------------------
@@ -43,9 +43,9 @@ aList.clear()
 # Dictionary
 # ------------------------------------------------------------------------------------------------------
 
-# Get a value
-dicctionary["name"] = "Antonio"
-dicctionary.get("age")
+# Get a value by its key
+my_dictionary["name"] = "Antonio"
+my_dictionary.get("age")
 
 # nested dictionaries
 myFamily = {

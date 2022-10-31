@@ -40,7 +40,7 @@ unknown_multi_args("could be one ", "two", "or unlimited")
 
 
 # Function with unknown list or args passed by a dictionary
-def unknown_multi_args(**kwargs):
+def unknown_multi_args(**kwargs):  # KeyWord arguments = dict/JSON
     print("This is a dictionary, kwargs['name']: ")
     print(kwargs["name"])
 

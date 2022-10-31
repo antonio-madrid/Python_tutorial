@@ -27,13 +27,13 @@ matches = re.findall("Portugal", text)
 print(matches)
 
 # re.split() returns a list where the string has been split at each match
-matches = re.split('\s', text)
+matches = re.split('\\s', text)
 print(matches)
 
 # third parameter can control the number of occurrences returned
-matches = re.split('\s', text, 1)
+matches = re.split('\\s', text, 1)
 print(matches)
 
 # re.sub() replaces the matches with the given string
-matches = re.sub("\s", "_", text)
+matches = re.sub("\\s", "_", text)
 print(matches)

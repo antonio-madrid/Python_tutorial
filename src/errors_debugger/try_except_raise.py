@@ -5,7 +5,8 @@
 # Standard try / except block
 try:
     print("try block allows to run code with a risk of throwing errors")
-except:
+# except:
+except Exception:  # both lines catch general errors
     print("except block allows exception handling")
 else:
     print("Else block allows to execute code when nothing went wrong")

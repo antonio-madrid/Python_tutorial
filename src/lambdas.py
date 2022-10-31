@@ -2,7 +2,7 @@
 # Lambdas
 # ------------------------------------------------------------------------------------------------------
 
-# No argument lamdas
+# No argument lambdas
 lambda_without_args = lambda: print("No arguments lambda")
 lambda_without_args()
 

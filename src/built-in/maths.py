@@ -14,12 +14,12 @@ print("Maximum number of: 1, 5, 3, 7, 8")
 print(maximum)
 
 absolute = abs(-7.25)
-print("Abolute positive value of 7.25")
+print("Absolute positive value of 7.25")
 print(absolute)
 
 # pow() returns the value of x to the power of y
 power = pow(4, 3) 
-print("4 to the power of 3:") # 4 * 4 * 4
+print("4 to the power of 3:")  # 4 * 4 * 4
 print(power)
 
 
@@ -33,7 +33,7 @@ import math
 
 # math.sqrt
 squareRoot = math.sqrt(64)
-print("The square root of 64 is: ") # 8 * 8
+print("The square root of 64 is: ")  # 8 * 8
 print(squareRoot)
 
 # math.ceil()

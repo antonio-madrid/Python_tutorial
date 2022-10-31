@@ -14,7 +14,7 @@ if os.path.exists("./newFolder"):
     os.rmdir("newFolder")
 
 
-# subprocess better executing commands
+# subprocess is a better way to executing commands
 import subprocess
 
 subprocess.call(["ls", "-la"])

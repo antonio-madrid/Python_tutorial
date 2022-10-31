@@ -3,24 +3,24 @@
 # ------------------------------------------------------------------------------------------------------
 
 # structure: while condition
-i = 0
-while i < 6:
-    i += 1
-    if i == 1:
-        continue
-    if i == 4:
-        break
-    print(i)
+# i = 0
+# while i < 6:
+#     i += 1
+#     if i == 1:
+#         continue
+#     if i == 4:
+#         break
+#     print(i)
 
 
 # ------------------------------------------------------------------------------------------------------
 # for loop
 # ------------------------------------------------------------------------------------------------------
 
-# for loop with a range, number of times
-# initial, last, increment
-for x in range(2, 6, 2):
-    print("Number ")
+# classic for loop uses a range in Python
+# Range values: initial, last, increment
+for x in range(2, 6, 2):  # Range 2-6 with an interval of 2
+    print("Number ")  # Prints 'Number' 2 times
     print(x)
 
 

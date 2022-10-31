@@ -14,7 +14,7 @@ except IOError:
 
 
 # ------------------------------------------------------------------------------------------------------
-# Open files using with open function
+# Open files using 'with open' function
 # ------------------------------------------------------------------------------------------------------
 
 # with open() is a sugar syntax, avoiding the use of try block and close() function

@@ -245,3 +245,6 @@ fabric.properties
 .idea/python_templates.iml
 .idea/vcs.xml
 .idea/inspectionProfiles/profiles_settings.xml
+.idea/*
+support/titanic_data.xlsx
+support/titanic_data_backup.csv

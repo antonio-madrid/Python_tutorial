@@ -29,8 +29,8 @@ print(next(myIterator))
 # To create a new Iterator object
 # Use the iter() constructor
 
-numers = [1, 2, 3, 4]
-numerIter = iter(numers)
+numbers = [1, 2, 3, 4]
+numerIter = iter(numbers)
 
 # To iterate the iterator use build-in function next()
 
