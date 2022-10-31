@@ -2,16 +2,29 @@ import pandas as pd
 
 df_titanic = pd.read_csv('../../support/titanic_data.csv')  # create a DataFrame from a CSV
 
-# SELECT some rows depending on a specific condition
-# (WHERE) in Dataframes
+# ------------------------------------------------------------------------------------------------------
+# DataFrame's conditionals filters or WHERE clause
+# ------------------------------------------------------------------------------------------------------
 
-# WHERE to a single column
+# SELECT some rows depending on a specific condition
+# (SQL WHERE) in Dataframes
+
+# ------------------------------------------------------------------------------------------------------
+# One single filter (WHERE)
+# ------------------------------------------------------------------------------------------------------
+
+# Applying a filter (WHERE) to a single column
 # df['column1'] condition
 age_filter = df_titanic["Age"] > 35  # returns a Series with all the coincidences
 
 print(
     df_titanic[age_filter]  # uses the Series to filter the original DataFrame
 )  # It returns a new filtered DataFrame
+
+
+# SQL:                                   SELECT column_name FROM dataframe_name WHERE condition
+# Pandas is a reversed SQL sentence:     FROM dataframe_name SELECT column_name WHERE condition
+# But in Pandas is:                      dataframe_name[filter_series condition]
 
 # Creates a Series filter which is uses to create a new filtered DataFrame
 # df[df['column'] condition = Filter Series]
@@ -20,6 +33,12 @@ print('WHERE of a single column: \nAbove 35:')
 print(
     above_35
 )
+
+
+# ------------------------------------------------------------------------------------------------------
+# More than a filter (WHERE)
+# ------------------------------------------------------------------------------------------------------
+
 
 # WHERE with more than a single condition to the same column
 # Every conditional operation must be surrounded by ( )
@@ -31,12 +50,28 @@ between_35_and_40 = df_titanic[(df_titanic["Age"] > 35) & (df_titanic["Age"] < 4
 print('Titanic passengers between 35 and 40 years:')
 print(between_35_and_40.shape)
 
+
+# WHERE to multiples columns
+# df[    (df["column1"] condition)  &  (df["Column2"] condition)   ]
+# df[    (df["column1"] condition)  |  (df["Column2"] condition)   ]
+above_35_and_passenger_id_860 = df_titanic[(df_titanic["Age"] > 35) & (df_titanic["PassengerId"] > 860)].tail(9)
+
+# Specifying more than a column or more than a condition to the same columns is written pretty much the same
+print(f'Titanic passengers above 35 years old and above passenger id 860: {above_35_and_passenger_id_860}')
+
+
+# ------------------------------------------------------------------------------------------------------
+# Conditionals (WHERE) as functions
+# ------------------------------------------------------------------------------------------------------
+
+# between()
 # Apply a filter between a range, it is the same operation as the last one
 between_35_and_40 = df_titanic[df_titanic["Age"].between(35, 40, inclusive="neither")]
 # inclusive determines to include the extreme numbers in the operations
 
 print('Titanic passengers between 35 and 40 years by between() function:')
 print(between_35_and_40.shape)
+
 
 # isin() - Filters the DataFrame by the given value
 # df[       df['column_name'].isin( [ comparable_value1, comparable_value2 ] )      ]
@@ -53,30 +88,53 @@ print(
     passengers_33_years
 )
 
-# WHERE to more than a column
 
-# df[    (df["column1"] condition)  &  (df["Column2"] condition)   ]
-# df[    (df["column1"] condition)  |  (df["Column2"] condition)   ]
-above_35_and_passenger_id_860 = df_titanic[(df_titanic["Age"] > 35) & (df_titanic["PassengerId"] > 860)].tail(9)
+# ------------------------------------------------------------------------------------------------------
+# df.loc attribute - rows and columns LOCators
+# ------------------------------------------------------------------------------------------------------
 
-print(df_titanic.dtypes)
+# SELECT rows and columnS of a DataFrame
+# df.loc[rows, columns]
 
-print(
-    df_titanic["Age"] > 35
-)
-
-
-# df.loc attribute
-# Allows to apply a filter and specify which columns will be returned
+# Rows and Columns can be SELECTed by its label, condition (filter)
 
 # Specifying a single column in the returned DataFrame
-passengers_33_years_name = df_titanic.loc[df_titanic['Age'] == 33, 'Name']
-print("Passenger's name & Id:")
-print(passengers_33_years_name)
+passengers_33_years_name = df_titanic.loc[df_titanic['Age'] == 33, 'Name']  # Just selecting column 'Name' (label)
+# Allows to apply a filter and specify which columns will be returned by its labels
+print(f"Passenger's name & Id: {passengers_33_years_name}")
 
 
 # Specifying more than a column in the returned DataFrame
-passengers_33_years_info = df_titanic.loc[df_titanic['Age'] == 33, ['Name', 'PassengerId']]
+passengers_33_years_info = df_titanic.loc[
+    df_titanic['Age'] == 33, ['Name', 'PassengerId']  # Selecting columns 'Name' and 'PassengerId' (labels)
+]
 
-print("Passenger's name & Id:")
-print(passengers_33_years_info)
+print(f"Passenger's name & Id: {passengers_33_years_info}")
+
+# loc creates a subset (new filtered DataFrame)
+
+
+# ------------------------------------------------------------------------------------------------------
+# iloc - Integer LOCators
+# ------------------------------------------------------------------------------------------------------
+
+# Similar to loc but accessing to Rows or Columns by its Integer position
+# Pandas indexes every row and column by default assigning a number
+
+# Structure:
+# df.iloc[rows_index_range, columns_index_range]
+
+# SELECTing columns: Name, Sex, Age and rows from 25 to 35
+ten_passengers_info = df_titanic.iloc[25:35, 3:5]  # Name, Sex, Age positions = 3:5
+
+print(f'Passengers info from 25 to 35 in the list: {ten_passengers_info}')
+
+# iloc is the perfect solution when knowing the index number of the rows actually wanted
+
+
+# TODO
+# ------------------------------------------------------------------------------------------------------
+# where function
+# ------------------------------------------------------------------------------------------------------
+
+# df_titanic.where()
