@@ -116,3 +116,11 @@ print('Not null Age values:')
 print(
     not_null_ages
 )
+
+
+# df.sort_values() - Sorts a DataFrame by the given column
+print('Passengers sorted by their Age:')
+print(
+    df_titanic.sort_values('Age', inplace=False)[['Name', 'Age']].head(25)  # It does not sort the original DataFrame
+)  # It shows the youngest passengers
+

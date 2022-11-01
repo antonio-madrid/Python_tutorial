@@ -3,23 +3,32 @@ import pandas as pd
 df_titanic = pd.read_csv('../../support/titanic_data.csv')  # create a DataFrame from a CSV
 
 # ------------------------------------------------------------------------------------------------------
-# DataFrame's conditionals filters or WHERE clause
+# DataFrame's conditionals filters
 # ------------------------------------------------------------------------------------------------------
 
 # SELECT some rows depending on a specific condition
 # (SQL WHERE) in Dataframes
 
 # ------------------------------------------------------------------------------------------------------
-# One single filter (WHERE)
+# One single filter (SQL WHERE)
 # ------------------------------------------------------------------------------------------------------
 
-# Applying a filter (WHERE) to a single column
+# Applying a filter to a single column
 # df['column1'] condition
 age_filter = df_titanic["Age"] > 35  # returns a Series with all the coincidences
 
+print('Passengers above 35 years:')
 print(
     df_titanic[age_filter]  # uses the Series to filter the original DataFrame
 )  # It returns a new filtered DataFrame
+
+
+# Applying a filter to a single column where accessing the column as an object attribute
+sex_filter = df_titanic.Sex == 'female'  # Accessing the column as an Object attribute
+print('Female passengers:')
+print(
+    df_titanic.Name[sex_filter]  # This returns a new DataFrame with a single column, Name, and applies a filter on it
+)
 
 
 # SQL:                                   SELECT column_name FROM dataframe_name WHERE condition
@@ -36,11 +45,11 @@ print(
 
 
 # ------------------------------------------------------------------------------------------------------
-# More than a filter (WHERE)
+# More than a filter
 # ------------------------------------------------------------------------------------------------------
 
 
-# WHERE with more than a single condition to the same column
+# SQL WHERE with more than a single condition to the same column
 # Every conditional operation must be surrounded by ( )
 # And followed by a Logical Operator
 # df[    (df["column_name"] condition)  &  (df["column_name"] condition)   ]
@@ -51,7 +60,7 @@ print('Titanic passengers between 35 and 40 years:')
 print(between_35_and_40.shape)
 
 
-# WHERE to multiples columns
+# SQL WHERE to multiples columns
 # df[    (df["column1"] condition)  &  (df["Column2"] condition)   ]
 # df[    (df["column1"] condition)  |  (df["Column2"] condition)   ]
 above_35_and_passenger_id_860 = df_titanic[(df_titanic["Age"] > 35) & (df_titanic["PassengerId"] > 860)].tail(9)
@@ -61,7 +70,7 @@ print(f'Titanic passengers above 35 years old and above passenger id 860: {above
 
 
 # ------------------------------------------------------------------------------------------------------
-# Conditionals (WHERE) as functions
+# Conditionals as functions
 # ------------------------------------------------------------------------------------------------------
 
 # between()
@@ -130,11 +139,3 @@ ten_passengers_info = df_titanic.iloc[25:35, 3:5]  # Name, Sex, Age positions = 
 print(f'Passengers info from 25 to 35 in the list: {ten_passengers_info}')
 
 # iloc is the perfect solution when knowing the index number of the rows actually wanted
-
-
-# TODO
-# ------------------------------------------------------------------------------------------------------
-# where function
-# ------------------------------------------------------------------------------------------------------
-
-# df_titanic.where()

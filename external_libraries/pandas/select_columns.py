@@ -9,14 +9,32 @@ df_titanic = pd.read_csv('../../support/titanic_data.csv')  # create a DataFrame
 #  SELECT specific columns of a DataFrame
 # It is the same as SQL, to SELECT just type the column name as a dictionary
 
+
+# ------------------------------------------------------------------------------------------------------
+# SELECT one_column
+# ------------------------------------------------------------------------------------------------------
+
 print('SELECT Name FROM df_titanic')
-print(  # SELECT one column
+print(
     df_titanic['Name'].tail(9)  # Only gets one column and all its values
 )  # When SELECTing a single column, its column name does not appear
+
+
+# SELECT one column as an object attribute
+print('SELECT Ticket FROM df_titanic')
+print(
+    df_titanic.Ticket.tail(9)
+)
+
 
 # SQL:                                   SELECT column_name FROM dataframe_name
 # Pandas is a reversed SQL sentence:     FROM dataframe_name SELECT column_name
 # But in Pandas is:                      dataframe_name['column_name']
+
+
+# ------------------------------------------------------------------------------------------------------
+# SELECT multiple_columns
+# ------------------------------------------------------------------------------------------------------
 
 print('SELECT Name, Sex, Age FROM df_titanic')
 print(  # SELECT more than one column
