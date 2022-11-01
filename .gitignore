@@ -248,3 +248,4 @@ fabric.properties
 .idea/*
 support/titanic_data.xlsx
 support/titanic_data_backup.csv
+support/no2_concentrations.png

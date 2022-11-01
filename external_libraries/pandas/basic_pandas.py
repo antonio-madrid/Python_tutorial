@@ -67,6 +67,19 @@ df_person = pd.DataFrame(
 
 print(df_person)
 
+
+# Creating a DataFrame from an array of arrays as a table
+df_array_table = pd.DataFrame(
+    [
+        ['Antonio', 33, 1],
+        ['Lorena', 33, 2],
+        ['Mercedes', 656, 3]
+    ], columns=['Name', 'Age', 'Id']  # Columns are specified apart
+)
+
+print(f'A DataFrame created from an array of arrays: \n {df_array_table}')
+
+
 # ------------------------------------------------------------------------------------------------------
 # DataFrame operations
 # ------------------------------------------------------------------------------------------------------
@@ -124,3 +137,7 @@ print(
     df_titanic.sort_values('Age', inplace=False)[['Name', 'Age']].head(25)  # It does not sort the original DataFrame
 )  # It shows the youngest passengers
 
+
+# set_index() function will set the given column as the DataFrame index instead the default one
+print('Using the Id column as an index: ')
+print(df_array_table.set_index('Id'))
