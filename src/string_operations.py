@@ -1,5 +1,11 @@
 string = "Hello world   "
 
+document_here = """
+This is a text,
+with several lines.
+This allows to have a better reading.
+This kind of string is name 'document here'
+"""
 
 # ------------------------------------------------------------------------------------------------------
 # String interpolation

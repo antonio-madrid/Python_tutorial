@@ -35,7 +35,7 @@ print(f'findAll() by a Pattern object finds all the occurrences by the given Reg
 # ------------------------------------------------------------------------------------------------------
 # re.search()
 # ------------------------------------------------------------------------------------------------------
-# returns a Match object with the first occurrence if found
+# returns a Match object with ONLY THE FIRST OCCURRENCE if found
 # re.search(pattern, string)
 matches = re.search("^The.*Spain$", text)
 
@@ -46,7 +46,7 @@ print(f'First occurrence value: {matches.group()}')
 
 
 # if no matches, None is returned
-matches = re.search("Portugal", text)
+matches = re.search("Portugal", text)  # ONLY FIRST OCCURRENCE
 print(f'search() when no occurrences found, None is returned: matches = {matches}')
 
 
@@ -103,6 +103,8 @@ The rain in the UK.
 The rain in Malaysia.
 The rain in Spain.
 The rain in SPAIN.
+Green tea is better.
+Red tea is better.
 """
 
 # MULTILINE RegEx flag
@@ -140,3 +142,53 @@ if matches:
 matches = re.search("^The.*Spain\\.$", multiline_text, flags=re.M | re.I)  # re.I is equal to re.IGNORECASE
 if matches:
     print(f'Applying search() with MULTILINE and IGONRECASE flags: {matches.group()}')  # returns first occurrence
+
+
+# ------------------------------------------------------------------------------------------------------
+# () Groups
+# ------------------------------------------------------------------------------------------------------
+# It allows to segment a whole pattern in several groups as we were splitting them
+
+email = 'antonio@gmail.com'
+
+match_object = re.match(r'(\w+)@(\w+)\.(\w+)', email)  # Searchs for an email and splits each part of it
+print(
+    f'math().groups() = {match_object.groups()}'  # Return a tuple with all the coincidences
+)
+print(
+    f'match.group() = {match_object.group()}'  # Returns group 0, which is equal to the whole pattern
+)
+print(
+    f'match.group(1) = {match_object.group(1)}'  # Returns the fist group value, the email name
+)
+print(
+    f'match.group(2) = {match_object.group(2)}'  # Returns the second group value, the email domain
+)
+print(
+    f'match.group(3) = {match_object.group(3)}'  # Returns the third group value, the email top level domain
+)
+
+
+# ------------------------------------------------------------------------------------------------------
+# OR RegEx
+# ------------------------------------------------------------------------------------------------------
+# Group a pattern between () using | operator, this will find for one or another pattern at the same time
+
+matches = re.findall("^(Green|Red).+\.$", multiline_text, re.M)  # It searches for phrases with 'Green' or 'Red'
+if matches:
+    print(f'findall() with groups () only returns the matches inside (): {matches}')
+
+# We can group every part that we want to return with findAll()
+matches = re.findall("^(Green|Red)(.+\.)$", multiline_text, re.M)  # It returns 'Green' or 'Red' and their phrase
+if matches:
+    print(f'findall() with several groups () returns every match inside those (): {matches}')
+
+
+# ------------------------------------------------------------------------------------------------------
+# (?:)
+# ------------------------------------------------------------------------------------------------------
+
+# Returns the whole match as a single group
+matches = re.findall("^(?:Green|Red).+\.$", multiline_text, re.M)  # It searches for phrases with 'Green' or 'Red'
+if matches:
+    print(f'findall() with groups (?:) returns the whole pattern, not just the groups: {matches}')
