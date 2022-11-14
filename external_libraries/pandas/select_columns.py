@@ -13,6 +13,8 @@ df_titanic = pd.read_csv('../../support/titanic_data.csv')  # create a DataFrame
 # ------------------------------------------------------------------------------------------------------
 # SELECT one_column
 # ------------------------------------------------------------------------------------------------------
+# df['column_name'] returns a series
+# df[['column_name']] returns a new DataFrame
 
 print('SELECT Name FROM df_titanic')
 print(
