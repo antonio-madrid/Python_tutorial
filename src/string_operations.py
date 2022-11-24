@@ -1,11 +1,31 @@
+# ------------------------------------------------------------------------------------------------------
+# String types
+# ------------------------------------------------------------------------------------------------------
+
+# Simple string
 string = "Hello world   "
 
+# Multiline string
 document_here = """
 This is a text,
 with several lines.
 This allows to have a better reading.
 This kind of string is name 'document here'
 """
+
+# Raw string - r""
+no_raw_string = 'Hello\nWorld'  # backslash allows to scape some characters by default
+print('A normal string will use the \\ character to scape others.', '\nFor instance:')  # \n creates a new line
+print('"Hello\\nWorld" = ', no_raw_string)
+print('\\ will scape "n", creating a new line and ignoring \\')  # \\ allows to write \ as a character
+
+raw_string = r'Hello\nWorld'  # Treats a string as a raw string, ignoring the scape characters \
+print("r'' allows to use a string as a raw string, ignoring escaped characters without the need to do it manually.")
+print(r"r'Hello\nWorld' = ", raw_string)  # r'' will display the \ characters instead of escaping others
+
+# Raw strings are perfect for URLs or strings that use special character as such \
+url_raw_string = r'https://www.wikipedia.org/'
+
 
 # ------------------------------------------------------------------------------------------------------
 # String interpolation
